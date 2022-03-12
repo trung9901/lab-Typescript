@@ -18,11 +18,11 @@ const status: boolean = true;
 const info: Product = { id: 1, name: 'a' };
 const stringArr: string[] = ["a", "b", "c"];
 const numberArr: number[] = [1, 2, 3, 4];
-const objectArr: Product[] = [{ id: 1 }, { id: 2 }]
+// const objectArr: Product[] = [{ id: 1 }, { id: 2 }]
 
 function sum(numA: number, numB: number): number {
     return numA + numB;
-    // return numA + numB;
+
 }
 
 sum(a, b);
