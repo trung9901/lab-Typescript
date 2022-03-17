@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink,Navigate} from 'react-router-dom';
 import logo from './logo.svg'
 import './App.css'
 import ShowInfo from './components/ShowInfo'
@@ -7,8 +7,11 @@ import Product from './components/Product'
 import { list, remove } from './api/product';
 import axios from 'axios';
 import type { IProduct } from './types/product';
-
-
+import WebsiteLayout from './pages/layouts/WebsiteLayout';
+import AdminLayout from './pages/layouts/AdminLayout'
+import Home from './pages/home';
+import ProductManager from './pages/layouts/ProductManager';
+import Dashboard from './pages/dashboard';
 function App() {
   const [count, setCount] = useState(0)
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -50,10 +53,18 @@ function App() {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<h1>Home Page</h1>} />
-            <Route path="product" element={products.map(item => <div>{item.name}</div>)} />
-            <Route path="about" element={<ShowInfo name="abc" age={10} />} />
-          </Routes>
+              <Route path="/" element={<WebsiteLayout />}>
+                <Route index element={<Home />} />
+                <Route path="product" element={<h1>Hien thi san pham</h1>} />
+                <Route path="about" element={<h1>About page</h1>} />
+              </Route>
+              
+              <Route path="admin" element={<AdminLayout />}>
+                  <Route index element={<Navigate to="dashboard"/>} />
+                  <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="products" element={<ProductManager />} />
+              </Route>
+            </Routes>
         </main>
     </div>
   )
