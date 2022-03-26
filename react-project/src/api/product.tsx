@@ -20,3 +20,7 @@ export const remove = (id: number) => {
     const url = `/product/${id}`;
     return instance.delete(url);
 }
+export const read = (id: string) => {
+    const url = `/product/${id}`;
+    return instance.get(url);
+}
