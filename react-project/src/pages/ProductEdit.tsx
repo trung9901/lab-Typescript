@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { read } from '../api/product';
-import { ProductTye } from '../types/product';
+import { ProductType } from '../types/product';
 
 type ProductEditProps = {
-    onUpdate: (product: ProductTye) => void
+    onUpdate: (product: ProductType) => void
 }
 type FormInputs = {
     name: string,

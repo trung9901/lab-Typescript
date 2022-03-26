@@ -3,7 +3,7 @@ export interface IProduct {
     name: string
 }
 
-export type ProductTye = {
+export type ProductType = {
     id?: number,
     name: string,
     price: number

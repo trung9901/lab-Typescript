@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { ProductTye } from '../types/product'
+import { ProductType } from '../types/product'
 import { Table, Tag, Space } from 'antd';
 
 type ProductManagerProps = {
-    products: ProductTye[];
+    products: ProductType[];
     onRemove: (id: number) => void
 }
 const columns = [

@@ -6,7 +6,7 @@ import ShowInfo from './components/ShowInfo'
 import Product from './components/Product'
 import { add, list, remove, update } from './api/product';
 import axios from 'axios';
-import type { ProductTye } from './types/product';
+import type { ProductType } from './types/product';
 import AdminLayout from './pages/layouts/AdminLayout';
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import Dashboard from './pages/dashboard';
@@ -21,7 +21,7 @@ import SignUp from './pages/SignUp';
 
 
 function App() {
-  const [products, setProducts] = useState<ProductTye[]>([]);
+  const [products, setProducts] = useState<ProductType[]>([]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -37,12 +37,12 @@ function App() {
     setProducts(products.filter(item => item.id !== id));
   }
 
-  const onHandleAdd = async (product: ProductTye) => {
+  const onHandleAdd = async (product: ProductType) => {
     const { data } = await add(product);
     setProducts([...products, data]);
   }
 
-  const onHandleUpdate = async (product: ProductTye) => {
+  const onHandleUpdate = async (product: ProductType) => {
     const { data } = await update(product);
     setProducts(products.map(item => item.id == data.id ? data : item));
   }
