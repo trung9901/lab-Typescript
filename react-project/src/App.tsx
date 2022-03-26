@@ -16,6 +16,8 @@ import ProductDetail from './pages/ProductDetail';
 import ProductAdd from './pages/ProductAdd';
 import ProductEdit from './pages/ProductEdit';
 import PrivateRouter from './components/PrivateRouter';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 
 function App() {
@@ -57,6 +59,12 @@ function App() {
           <li>
             <NavLink to="/about">About</NavLink>
           </li>
+          <li>
+            <NavLink to="/signin">Signin</NavLink>
+          </li>
+          <li>
+            <NavLink to="/signup">Signup</NavLink>
+          </li>
         </ul>
       </header>
       <main>
@@ -69,6 +77,8 @@ function App() {
               <Route path=":id" element={<ProductDetail />} />
             </Route>
             <Route path="about" element={<h1>About page</h1>} />
+            <Route path="signin" element={<SignIn />} />
+            <Route path="signup" element={<SignUp />} />
           </Route>
 
           <Route path="admin" element={<PrivateRouter><AdminLayout /></PrivateRouter>}>
@@ -77,7 +87,7 @@ function App() {
             <Route path="products">
               <Route index element={<PrivateRouter><ProductManager products={products} onRemove={removeItem} /></PrivateRouter>} />
               <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate} />} />
-              <Route path="add" element={<ProductAdd name="Dat" onAdd={onHandleAdd} />} />
+              <Route path="add" element={<ProductAdd name="Trung" onAdd={onHandleAdd} />} />
             </Route>
           </Route>
         </Routes>

@@ -1,7 +1,19 @@
 {
-    "products": [{
-        "name": "san pham A",
-        "price": "200000",
-        "id": 1
-    }]
+  "products": [
+    {
+      "name": "san pham A",
+      "price": "200000",
+      "id": 1
+    },
+    {
+      "name": "xzxczxc",
+      "price": "234",
+      "id": 2
+    },
+    {
+      "name": "asggg",
+      "price": "44444",
+      "id": 3
+    }
+  ]
 }
